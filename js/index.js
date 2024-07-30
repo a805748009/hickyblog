@@ -44,6 +44,45 @@ $(function(){
 	})
 	//img_box
 	function boxStyle(oname){
+		// 获取所有的.img_box04 元素
+		const imgBoxes = document.querySelectorAll('.img_box04');
+
+		// 遍历每个元素
+		imgBoxes.forEach((imgBox) => {
+			// 获取当前元素下的所有 img 元素
+			const images = imgBox.getElementsByTagName('img');
+
+			// 根据 img 数量设置样式
+			if (images.length === 1) {
+				imgBox.style.width = '19rem';
+				imgBox.style.overflow = 'hidden';
+				for (let i = 0; i < images.length; i++) {
+					images[i].style.width = '19rem';
+					images[i].style.float = 'left';
+					images[i].style.marginBottom = '0.2rem';
+					images[i].style.marginRight = '0.2rem';
+				}
+			}
+			if (images.length === 2) {
+				imgBox.style.width = '19rem';
+				imgBox.style.overflow = 'hidden';
+				for (let i = 0; i < images.length; i++) {
+					images[i].style.width = '8rem';
+					images[i].style.marginBottom = '0.2rem';
+					images[i].style.marginRight = '0.2rem';
+				}
+			}
+			if (images.length === 3) {
+				imgBox.style.width = '19rem';
+				imgBox.style.overflow = 'hidden';
+				for (let i = 0; i < images.length; i++) {
+					images[i].style.width = '8rem';
+					images[i].style.marginBottom = '0.2rem';
+					images[i].style.marginRight = '0.2rem';
+				}
+			}
+		});
+
 		var counts=$(oname).find("img");
 		if (counts.length==1) {
 			$(oname).css({"width":"10rem","overflow":"hidden"})
